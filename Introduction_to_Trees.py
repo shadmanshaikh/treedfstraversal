@@ -39,6 +39,7 @@ collector = FeedbackCollector(
 )
 
 
+print(st.secrets.TRUBRICS_EMAIL)
 
 user_feedback = collector.st_feedback(
     component="default",
