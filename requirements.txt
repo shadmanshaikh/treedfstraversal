@@ -1,3 +1,4 @@
 streamlit 
+trubrics[streamlit]
 Pillow
 binarytree
