@@ -1,7 +1,5 @@
-import json
 import streamlit as st
 from binarytree import Node, build ,tree
-from streamlit_lottie import st_lottie  
 from PIL import Image
 # @st.cache_data
 
@@ -9,9 +7,7 @@ st.set_page_config(
     page_title="Traversal Algorithms In Trees",
     page_icon=":rocket:"
 )
-def load_local_animation(filepath : str):
-    with open(filepath , "r") as f:
-        return json.load(f)
+
 def main():
     # find the DFS algorithms 
     ## adjusting the buttons 

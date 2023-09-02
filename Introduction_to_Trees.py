@@ -1,6 +1,4 @@
 import streamlit as st
-import json
-from streamlit_lottie import st_lottie
 from trubrics.integrations.streamlit import FeedbackCollector
 
 
@@ -8,12 +6,6 @@ st.set_page_config(
     page_title="Traversal Algorithms In Trees",
     page_icon=":rocket:"
 )
-
-
-
-def load_local_animations(filepath:str):
-    with open(filepath , "r") as f:
-        return json.load(f)
 
 st.write("<div style='font-family: monospace; font-size: 20px ; text-align: center'> About the Project: </div>\n\n" , unsafe_allow_html=True)
 st.write("<div style='font-family: monospace; font-size: 20px ; text-align: center'> Practice All Your Major Tree DFS & BFS Algorithms Here! </div>\n\n" , unsafe_allow_html=True)
