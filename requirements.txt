@@ -1,5 +1,4 @@
 streamlit 
-streamlit-lottie
 trubrics["streamlit"]
 Pillow
 binarytree
