@@ -35,17 +35,27 @@ def main():
     col1 , col2 , col3 = st.columns(3)
     inorder_algo = height_adjustable_binary_tree.inorder
     # if col1.button("inorder"):
-    st.text(f'The Inorder of the tree is : {inorder_algo}')
+    # st.text(f'The Inorder of the tree is : {inorder_algo}')
+    with st.expander("INORDER :" , expanded=False):
+        st.text(height_adjustable_binary_tree.inorder)
 
     preorder_algo = height_adjustable_binary_tree.preorder
+    with st.expander("PREORDER :" , expanded=False):
+        st.text(height_adjustable_binary_tree.preorder)
+
     # if col2.button("preorder"):
-    st.text(f'The preorder of the tree is : {preorder_algo}')
+    # st.text(f'The preorder of the tree is : {preorder_algo}')
 
     postorder_algo = height_adjustable_binary_tree.postorder
     # if col3.button("postorder"):
-    st.text(f'The preorder of the tree is : {postorder_algo}')
+    with st.expander("POSTORDER :" , expanded=False):
+        st.text(height_adjustable_binary_tree.postorder)
 
-    st.text(f'The level order of the tree is : {list(height_adjustable_binary_tree)}')
+    # st.text(f'The preorder of the tree is : {postorder_algo}')
+
+    # st.text(f'The level order of the tree is : {list(height_adjustable_binary_tree)}')
+    with st.expander("LEVEL ORDER :" , expanded=False):
+        st.text(list(height_adjustable_binary_tree))
 
 
 
