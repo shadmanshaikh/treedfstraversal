@@ -1,7 +1,6 @@
 import streamlit as st
-from binarytree import Node, build ,tree
+from binarytree import Node, build , tree
 from PIL import Image
-# @st.cache_data
 
 st.set_page_config(
     page_title="Traversal Algorithms In Trees",
@@ -12,7 +11,7 @@ def main():
     # find the DFS algorithms 
     ## adjusting the buttons 
 
-    st.write(  "<div style = 'font-family: monospace; font-size : 30px; background-color : lightgrey;'>🚀 Binary Tree Visualization</div> " , unsafe_allow_html=True)
+    st.write(  "<div style = 'font-family: monospace; font-size : 30px; background-color : lightgrey;'>🚀 BFS and DFS Traversal Playground</div> " , unsafe_allow_html=True)
     st.write("<div style='border:1px solid black;'> </div>" ,unsafe_allow_html=True)
     st.write("<div style = 'font-family: monospace; font-size : 20px; background-color : white ; padding : 10px ; border: 2px solid black;'> Height Adjustable Binary Tree</div> " , unsafe_allow_html=True)
 
@@ -56,6 +55,19 @@ def main():
     # st.text(f'The level order of the tree is : {list(height_adjustable_binary_tree)}')
     with st.expander("LEVEL ORDER :" , expanded=False):
         st.text(list(height_adjustable_binary_tree))
+    
+    with st.expander("More info :"):
+        for i , j in height_adjustable_binary_tree.properties.items():
+            if j == False:
+                i = i.replace("_", " ")
+                st.write(f' {i} : no')
+            elif j == True:
+                i = i.replace("_", " ")
+                if j > 1 :
+                    st.write(f'{i} : {j}')
+                st.write(f' {i} : yes')
+            else:
+                st.write(f'{i} is : {j}')
 
 
 
@@ -113,18 +125,18 @@ def main():
     # st_lottie( tree_animation , height = 80 , width = 80 , loop = False ) 
 
     st.write("<div style = 'font-family : monospace ; font-size : 30px ; text-align : center'> Please provide your valuable feedback : <a href='http://localhost:8501/'> Link </a> </div>" , unsafe_allow_html=True)
-    st.text("want to support my work ?")
+    # st.text("want to support my work ?")
 
-    image = Image.open('pages/bmc_qr.png' )
-    st.image(image , caption="buy me a coffee" , width=200)
+    # image = Image.open('pages/bmc_qr.png' )
+    # st.image(image , caption="buy me a coffee" , width=200)
 
     # Markdown text with embedded image
     markdown_text = f"""
     <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="shadmanshaikh" data-description="Support me on Buy me a coffee!" data-message="" data-color="#5F7FFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
     """
+    from streamlit.components.v1 import html
 
-    # Display the Markdown with the embedded image
-    st.markdown(markdown_text, unsafe_allow_html=True)
+    html(markdown_text)
 
 
 
