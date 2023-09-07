@@ -1,6 +1,7 @@
 import streamlit as st
 from binarytree import Node, build , tree
 from PIL import Image
+import streamlit.components.v1 as components
 
 st.set_page_config(
     page_title="Traversal Algorithms In Trees",
@@ -128,13 +129,12 @@ def main():
     st.info('want to add more features let me know! mail : shadmanforreal45@gmail.com\n And also graphs dfs and bfs will be added soon!')
     # convert level order to bfs
     st.write("<div style = 'font-family : monospace ; font-size : 30px ; text-align : center'> Please provide your valuable feedback : <a href='http://localhost:8501/'> Link </a> </div>" , unsafe_allow_html=True)
-
-    markdown_text = f"""
-    <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="shadmanshaikh" data-description="Support me on Buy me a coffee!" data-message="" data-color="#5F7FFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
-    """
-    from streamlit.components.v1 import html
-
-    html(markdown_text)
+    components.html(
+        """
+           <center> <a href="https://www.buymeacoffee.com/shadmanshaikh" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a></center>
+         """
+    )
+ 
 
 
 
