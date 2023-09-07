@@ -25,9 +25,9 @@ def main():
     want_letter = st.checkbox("Make the nodes in letters")
     if want_letter:
         want_letter = True
-    st.sidebar.header("Adjust the height of the tree :")
+    st.header("Adjust the height of the tree :")
 
-    tree_height = st.sidebar.slider("select tree height" , min_value=1 , max_value=5 )
+    tree_height = st.slider("select tree height" , min_value=1 , max_value=5 )
     height_adjustable_binary_tree = tree(height = tree_height , is_perfect=isPerfectChecker , letters=want_letter)
     st.graphviz_chart(height_adjustable_binary_tree.graphviz())
 
@@ -113,24 +113,22 @@ def main():
 
     if rootNode and  leftNode and  rightNode and  left_left_Node and left_right_Node  != type(str) :
         st.graphviz_chart(root.graphviz())
-        st.text(f'level order : {root.values}')
+        with st.expander("custom level order"):
+            st.text(f'level order : {root.values}')
+        with st.expander("custom preorder:"):
+            Custom_PreOrder = root.preorder
+            st.text(f'custom preorder : {Custom_PreOrder}') 
+        with st.expander("custom postorder"):
+            Custom_PostOrder = root.postorder
+            st.text(f'custom preorder : {Custom_PostOrder}') 
+        
     else:
         st.warning("Can't display the tree as you have left fields empty!") 
     
-    st.info('converting level order or BFS from  custom binary tree to inorder , preorder and postorder tree . . . will be added soon!')
-
-    # convert level order of the custom binary tree to inorder , preorder and postorder tree
-
-    # tree_animation = load_local_animation("src/data.json")
-    # st_lottie( tree_animation , height = 80 , width = 80 , loop = False ) 
-
+    st.info('want to add more features let me know! mail : shadmanforreal45@gmail.com\n And also graphs dfs and bfs will be added soon!')
+    # convert level order to bfs
     st.write("<div style = 'font-family : monospace ; font-size : 30px ; text-align : center'> Please provide your valuable feedback : <a href='http://localhost:8501/'> Link </a> </div>" , unsafe_allow_html=True)
-    # st.text("want to support my work ?")
 
-    # image = Image.open('pages/bmc_qr.png' )
-    # st.image(image , caption="buy me a coffee" , width=200)
-
-    # Markdown text with embedded image
     markdown_text = f"""
     <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="shadmanshaikh" data-description="Support me on Buy me a coffee!" data-message="" data-color="#5F7FFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
     """
